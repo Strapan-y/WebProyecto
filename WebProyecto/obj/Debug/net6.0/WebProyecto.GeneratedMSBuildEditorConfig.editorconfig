@@ -1,0 +1,91 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebProyecto
+build_property.RootNamespace = WebProyecto
+build_property.ProjectDir = C:\Users\andre\OneDrive\Ingenieria\Noveno Semestre\Programacion web\PROYECTO AGENDA Final\WebProyecto\WebProyecto\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\andre\OneDrive\Ingenieria\Noveno Semestre\Programacion web\PROYECTO AGENDA Final\WebProyecto\WebProyecto
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Agenda/Agenda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmRhXEFnZW5kYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Agenda/AgendaCrearUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmRhXEFnZW5kYUNyZWFyVXN1YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Agenda/AgendaHistorial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmRhXEFnZW5kYUhpc3RvcmlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Agenda/AgendaLugar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmRhXEFnZW5kYUx1Z2FyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Agenda/AgendaServicio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWdlbmRhXEFnZW5kYVNlcnZpY2lvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Empleado/Inicio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9cSW5pY2lvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Usuario/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Usuario/RegistrarPersona.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xSZWdpc3RyYXJQZXJzb25hLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Usuario/UsuarioHistorial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xVc3VhcmlvSGlzdG9yaWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Usuario/UsuarioMiagenda.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xVc3VhcmlvTWlhZ2VuZGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Usuario/UsuarioReservaServicios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xVc3VhcmlvUmVzZXJ2YVNlcnZpY2lvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/andre/OneDrive/Ingenieria/Noveno Semestre/Programacion web/PROYECTO AGENDA Final/WebProyecto/WebProyecto/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-nxo6x7kdk4

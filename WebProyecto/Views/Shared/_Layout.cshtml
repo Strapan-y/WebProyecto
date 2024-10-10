@@ -1,0 +1,87 @@
+﻿@{
+    bool hideNavBar = ViewData["HideNavBar"] as bool? ?? false;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Universidad</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebProyecto.styles.css" asp-append-version="true" />
+    <style>
+        body {
+            background: url('/path/to/your/spa-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            margin: 0; /* Asegúrate de que no hay margen */
+        }
+
+        .navbar-custom {
+            padding: 0.5rem 1rem; /* Ajusta el padding según sea necesario */
+        }
+
+        .navbar-brand {
+            font-size: 1.5em; /* Ajusta el tamaño de fuente según sea necesario */
+            color: #fff; /* Cambia el color según tu diseño */
+        }
+
+        .btn-custom {
+            margin: 0.2rem; /* Ajusta el margen según sea necesario */
+        }
+
+        .content {
+            text-align: center;
+            position: absolute;
+            top: 56px; /* Ajusta este valor al tamaño de tu navbar */
+            width: 100%;
+        }
+
+            .content img {
+                max-height: calc(100vh - 56px); /* Ajusta este valor al tamaño de tu navbar */
+                max-width: 100%;
+                object-fit: cover;
+            }
+    </style>
+</head>
+<body>
+    @if (!hideNavBar)
+    {
+
+        <header>
+
+            <nav class="navbar navbar-custom navbar-expand navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" asp-controller="Usuario" asp-action="UsuarioMiagenda">Inicio</a>
+                <div class="ml-auto">
+                    <a class="btn btn-outline-primary btn-custom" asp-controller="Usuario" asp-action="Index">Login</a>
+                    <a class="btn btn-primary btn-custom" asp-controller="Usuario" asp-action="RegistrarPersona">Registrarme</a>
+                </div>
+            </nav>
+
+        </header>
+    }
+
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+
+    @if (!(ViewData["HideFooter"] as bool? ?? false)) // Usa la misma condición si estás utilizando la misma variable
+    {
+        <footer class="border-top footer text-muted">
+
+            <div class="container">
+                &copy; 2023 - WebProyecto - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+        </footer>
+    }
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

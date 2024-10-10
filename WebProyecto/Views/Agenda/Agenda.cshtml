@@ -1,0 +1,277 @@
+﻿@model IEnumerable<parametros_agenda>
+@{
+    ViewData["Title"] = "Agenda";
+}
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Agenda</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        /* Custom styles */
+        .navbar-custom {
+            background-color: white;
+            border-bottom: 2px solid black;
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            color: black; /* Black text color */
+         }
+
+         .navbar-custom .navbar-nav .nav-link.active,
+         .navbar-custom .navbar-nav .nav-link:hover {
+             background-color: #f8bbd0; /* Pale rose background */
+             color: black; /* Keep text color black */
+          }
+
+        .header-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+            .header-area .title {
+                font-size: 24px; /* Adjust the size as needed */
+            }
+
+        .buttons-group {
+            text-align: right;
+        }
+
+            .buttons-group .btn {
+                margin-left: 10px; /* Space between buttons */
+            }
+
+        .form-container, .table-container {
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .btn-crear {
+            background-color: green;
+            color: white;
+        }
+
+        .btn-guardar {
+            background-color: green; /* Same background color as the 'Crear' button */
+            color: white;
+            float: right; /* Align the button to the right */
+            position: relative;
+            top: -30px;
+        }
+
+        .btn-primary {
+            background-color: green;
+        }
+
+        .btn-actualizar {
+            background-color: #f8bbd0; /* Pale rose background */
+            color: black; /* Black text color */
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="agendaForm" asp-controller="Agenda" asp-action="Agenda" method="post">
+
+
+        <nav class="navbar navbar-expand-lg navbar-custom">
+
+            <a class="navbar-brand" href="#">Inicio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" asp-controller="Agenda" asp-action="AgendaLugar">Gestionar Lugar</a>
+                    <a class="nav-link" asp-controller="Agenda" asp-action="AgendaServicio">Gestionar Servicio</a>
+                    <a class="nav-link active" asp-controller="Agenda" asp-action="Agenda">Gestionar Agenda</a>
+                    <a class="nav-link" asp-controller="Agenda" asp-action="AgendaCrearUsuario">Crear Usuarios</a>
+                    <a class="nav-link" asp-controller="Agenda" asp-action="AgendaHistorial">Historial</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Mi Cuenta
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="nav-link" asp-controller="Usuario" asp-action="Cerrar"> Cerrar Sesión</a>
+                        </div>
+                    </li>
+                </div>
+            </div>
+        </nav>
+
+        
+
+    </form>
+
+    <!-- Formulario de agenda -->
+    <div class="container">
+        <!-- Tu código de container aquí -->
+        <div class="header-area">
+            <div class="title">Gestionar Agenda</div>
+        </div>
+
+
+        <div class="buttons-group">
+            <button type="button" class="btn btn-crear" onclick="toggleComponent('formAgenda')">CREAR</button>
+        </div>
+        <div class="form-container hidden" id="formAgenda">
+            <form id="generarparametros" asp-controller="Agenda" asp-action="Agenda" method="post" class="row">
+
+                <!-- Primera columna: Selección de persona -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label for="selectPersona">Seleccionar Lugar:</label>
+                            @Html.DropDownList("selectLugar", (SelectList)ViewBag.DatosLugares, "Seleccione un Lugar", new { @class = "form-control" ,required = "required"})
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="selectPersona">Seleccionar Empleado:</label>
+                        @Html.DropDownList("selectPersona", (SelectList)ViewBag.DatosComboBoxPersonas, "Seleccione un empleado", new { @class = "form-control",required = "required" })
+                    </div>
+
+                </div>
+
+                <!-- Segunda columna: Días de trabajo -->
+                <div class="col-md-4">
+                    <label>Días de Trabajo:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" name="lunes" type="checkbox" value="1" id="Lunes">
+                        <label class="form-check-label" for="checkLunes">Lunes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="martes" type="checkbox" value="2" id="Martes">
+                        <label class="form-check-label" for="checkMartes">Martes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="miercoles" type="checkbox" value="3" id="Miercoles">
+                        <label class="form-check-label" for="checkMiercoles">Miercoles</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="jueves" type="checkbox" value="4" id="Jueves">
+                        <label class="form-check-label" for="checkjueves">Jueves</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="viernes" type="checkbox" value="5" id="Viernes">
+                        <label class="form-check-label" for="checkViernes">Viernes</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="sabado" type="checkbox" value="6" id="Sabado">
+                        <label class="form-check-label" for="checkSabado">Sabado</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="domingo" type="checkbox" value="7" id="Domingo">
+                        <label class="form-check-label" for="checkViernes">Domingo</label>
+                    </div>
+                    <!-- Agregar controles de checkbox para otros días de la semana -->
+                </div>
+
+                <!-- Tercera columna: Fechas y horas de inicio y fin -->
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fechaInicio" >Fecha de Inicio:</label>
+                        <input type="date" class="form-control" name="fechaInicio" id="fechaInicio">
+                    </div>
+                    <div class="form-group">
+                        <label for="fechaFin" >Fecha de Fin:</label>
+                        <input type="date" class="form-control" name="fechaFin" id="fechaFin">
+                    </div>
+                    <div class="form-group">
+                        <label for="horaInicio" >Hora de Inicio:</label>
+                        <input type="time" class="form-control" name="horaInicio" id="horaInicio">
+                    </div>
+                    <div class="form-group">
+                        <label for="horaFin" >Hora de Fin:</label>
+                        <input type="time" class="form-control" name="horaFin" id="horaFin">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="durationMinutes"  class="form-label">Duracion</label>
+                        <input type="number" class="form-control" id="durationMinutes" name="duracion"  placeholder="Ingresa minutos">
+                    </div>
+                </div>
+
+
+
+                <!-- Botón centrado para Generar Agenda -->
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary">Generar Agenda</button>
+                </div>
+            </form>
+        </div>
+
+
+     </div>
+
+    <!-- Componente para visualizar agendas -->
+    <div class="table-container">
+        <h3>Agendas Creadas</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Persona</th>
+                    <th>Fecha de Inicio</th>
+                    <th>Fecha de Fin</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fin</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se llenarán las filas con las agendas creadas -->
+                <!-- Ejemplo de fila (deberías generarlas dinámicamente) -->
+                <tr>
+                    <td>Persona 1</td>
+                    <td>2023-07-01</td>
+                    <td>2023-07-05</td>
+                    <td>09:00</td>
+                    <td>17:00</td>
+                    <td>
+                        <button class="btn btn-secondary">Actualizar</button>
+                        <button class="btn btn-danger">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- Agrega más filas según las agendas existentes -->
+            </tbody>
+        </table>
+    </div>
+        <!-- ... -->
+   
+
+    <!-- Tus scripts aquí -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+    <script>
+
+        // Función para alternar entre mostrar y ocultar componentes
+        function toggleComponent(componentId) {
+            var component = document.getElementById(componentId);
+            component.classList.toggle('hidden');
+        }
+
+        // Función para generar agenda
+        function generarAgenda() {
+            // Lógica para generar y mostrar la agenda
+        }
+    </script>
+
+</body>
+</html>

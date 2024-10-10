@@ -1,0 +1,158 @@
+﻿@model IEnumerable<Agenda>
+@{
+    ViewData["Title"] = "Generar Reserva";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas de Servicios</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .scrollable-table {
+            overflow-y: auto;
+            max-height: 200px; /* Puedes ajustar esto según lo necesites */
+        }
+        body {
+            background-color: #f8f9fa;
+            color: black; /* Establece el color de la fuente de todo el cuerpo en negro */
+        }
+
+        .navbar-custom {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+            .navbar-custom .navbar-nav .nav-link {
+                color: black; /* Establece el color de la fuente de los enlaces de la barra de navegación en negro */
+            }
+
+                .navbar-custom .navbar-nav .nav-link.active {
+                    background-color: #f8bbd0; /* Color rosado para el enlace activo */
+                    border-radius: 5px;
+                    color: black; /* Establece el color de la fuente del enlace activo en negro */
+                }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .shadow-box {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .table-responsive {
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            background-color: green;
+            color: white; /* Establece el color de la fuente del botón en negro */
+            border-radius: 20px;
+            padding: 10px 25px;
+        }
+
+            .btn-custom:hover {
+                background-color: darkgreen; /* Un verde más oscuro para el efecto hover */
+                color: white; /* Cambia el color de la fuente a blanco para el efecto hover */
+            }
+
+        .header {
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .form-row {
+            align-items: end; /* Alinea los controles del formulario en la parte inferior */
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" asp-controller="Usuario" asp-action="UsuarioReservaServicios">Servicios</a>
+                <a class="nav-link " asp-controller="Usuario" asp-action="UsuarioMiagenda">Mis Reservas</a>
+                <a class="nav-link" asp-controller="Usuario" asp-action="UsuarioHistorial">Historial</a>
+                <a class="nav-link" asp-controller="Usuario" asp-action="Cerrar">Cerrar Sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container for Reservations -->
+    <div class="container">
+        <div class="header">
+            <h2>Servicios disponibles</h2>
+        </div>
+        <form asp-action="UsuarioReservaServicios" asp-controller="Usuario" method="post">
+        <div class="shadow-box">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="selectPersona">Seleccione servicio:</label>
+                        @Html.DropDownList("selectLugar", (SelectList)ViewBag.datosTipoServicio, "Seleccione servicio", new { @class = "form-control"  ,required = "required" })
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="fecha">Fecha</label>
+                    <input type="date" class="form-control" name="fecha">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="horaServicio">Hora del Servicio</label>
+                    <input type="time" class="form-control" name="hora">
+
+                </div>
+                    
+                <div class="form-group col-md-4">
+                        <button class="btn btn-warning btn-sm btn-action" type="submit" name="action" value="buscar">Buscar</button>
+                </div>
+
+            </div>
+            <div class="table-responsive scrollable-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Encargado</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Seleccionar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Agenda agendaservicio in Model)
+                        {
+                            <tr>
+                                <td>@agendaservicio.Id</td>
+                                <td>@agendaservicio.encargado</td>
+                                <td>@agendaservicio.fecha</td>
+                                <td>@agendaservicio.hora</td>
+                                <td><input type="checkbox" name="servicioSeleccionado" value="@agendaservicio.Id"></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+                <button type="submit" class="btn btn-custom" formaction="/Usuario/Reservar" name="action" value="reservar">Reservar</button>
+        </div>
+        </form>
+    </div>
+
+    <!-- Scripts for Bootstrap functionality -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

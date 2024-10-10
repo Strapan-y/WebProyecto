@@ -1,0 +1,199 @@
+﻿@model IEnumerable<ConsutlaHistorialServicios>
+@{
+    ViewData["Title"] = "AgendaHistorial";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Servicio</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .scrollable-table {
+            overflow-y: auto;
+            max-height: 200px; /* Puedes ajustar esto según lo necesites */
+        }
+        /* Custom styles */
+        .navbar-custom {
+            background-color: white;
+            border-bottom: 2px solid black;
+        }
+
+            .navbar-custom .navbar-nav .nav-link {
+                color: black; /* Black text color */
+            }
+
+                .navbar-custom .navbar-nav .nav-link.active,
+                .navbar-custom .navbar-nav .nav-link:hover {
+                    background-color: #f8bbd0; /* Pale rose background */
+                    color: black; /* Keep text color black */
+                }
+
+        .header-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+            .header-area .title {
+                font-size: 24px; /* Adjust the size as needed */
+            }
+
+        .buttons-group {
+            text-align: right;
+        }
+
+            .buttons-group .btn {
+                margin-left: 10px; /* Space between buttons */
+            }
+
+        .form-container, .table-container {
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .btn-crear {
+            background-color: green;
+            color: white;
+        }
+
+        .btn-guardar {
+            background-color: green; /* Same background color as the 'Crear' button */
+            color: white;
+            float: right; /* Align the button to the right */
+            position: relative;
+            top: -30px;
+        }
+
+        .btn-actualizar {
+            background-color: #f8bbd0; /* Pale rose background */
+            color: black; /* Black text color */
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" asp-controller="Agenda" asp-action="AgendaLugar">Gestionar Lugar</a>
+                <a class="nav-link " asp-controller="Agenda" asp-action="AgendaServicio">Gestionar Servicio</a>
+                <a class="nav-link" asp-controller="Agenda" asp-action="Agenda">Gestionar Agenda</a>
+                <a class="nav-link" asp-controller="Agenda" asp-action="AgendaCrearUsuario">Crear Usuarios</a>
+                <a class="nav-link active" asp-controller="Agenda" asp-action="AgendaHistorial">Historial</a>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mi Cuenta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="nav-link" asp-controller="Usuario" asp-action="Cerrar"> Cerrar Sesión</a>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header-area">
+            <div class="title">Historial Servicios</div>
+            <div class="buttons-group">
+                <a class="btn btn-actualizar" asp-controller="PDF" asp-action="GenerarPdfAgendas">Exportar PDF</a>
+                <a class="btn btn-actualizar" asp-controller="PDF" asp-action="GenerarExcelAgendas">Exportar Excel</a>
+            </div>
+        </div>
+
+        <div class="table-container scrollable-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Servicio</th>
+                        <th scope="col">Encargado</th>
+                        <th scope="col">Descripcion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (ConsutlaHistorialServicios agendaservicio in Model)
+                    {
+                        <tr>
+                            <td>@agendaservicio.fechainicio_age</td>
+                            <td>@agendaservicio.horainicio_age</td>
+                            <td>@agendaservicio.Nombre_Servicio</td>
+                            <td>@agendaservicio.nombre_persona</td>
+                            <td>@agendaservicio.Descripcion_Servicio</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <!-- Insercion -->
+        <form id="generarAgendaForm" asp-controller="Agenda" asp-action="Agendaservicio" method="post" class="row">
+            <div class="form-container hidden" id="dataEntryForm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="direccion">Descripcion</label>
+                            <input type="text" class="form-control" name="descripcion" placeholder="Descripcion">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="tiemposervicio">Tiempo</label>
+                            <input type="text" class="form-control" name="tiempo" placeholder="Duracion en Horas">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="estadoservicio">Estado del Servicio</label>
+                            <select class="form-control" name="estadoservicio">
+                                <option>Activo</option>
+                                <option>Inactivo</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-guardar">GUARDAR</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function toggleForm() {
+            var formContainer = document.getElementById('dataEntryForm');
+            formContainer.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
+
+
+

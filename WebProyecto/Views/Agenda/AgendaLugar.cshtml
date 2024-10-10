@@ -1,0 +1,229 @@
+﻿@model IEnumerable<AgendaLugar>
+
+@{
+    ViewData["Title"] = "AgendaLugar";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Lugares</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        /* Custom styles */
+        .navbar-custom {
+            background-color: white;
+            border-bottom: 2px solid black;
+        }
+
+            .navbar-custom .navbar-nav .nav-link {
+                color: black; /* Black text color */
+            }
+
+                .navbar-custom .navbar-nav .nav-link.active,
+                .navbar-custom .navbar-nav .nav-link:hover {
+                    background-color: #f8bbd0; /* Pale rose background */
+                    color: black; /* Keep text color black */
+                }
+
+        .header-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+            .header-area .title {
+                font-size: 24px; /* Adjust the size as needed */
+            }
+
+        .buttons-group {
+            text-align: right;
+        }
+
+            .buttons-group .btn {
+                margin-left: 10px; /* Space between buttons */
+            }
+
+        .form-container, .table-container {
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+            border-radius: 15px; /* Rounded corners */
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .btn-crear, .btn-guardar {
+            background-color: green;
+            color: white;
+        }
+
+        .btn-actualizar {
+            background-color: #f8bbd0; /* Pale rose background */
+            color: black; /* Black text color */
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" asp-controller="Agenda" asp-action="AgendaLugar">Gestionar Lugar</a>
+                <a class="nav-link" asp-controller="Agenda" asp-action="AgendaServicio">Gestionar Servicio</a>
+                <a class="nav-link" asp-controller="Agenda" asp-action="Agenda">Gestionar Agenda</a>
+                <a class="nav-link" asp-controller="Agenda" asp-action="AgendaCrearUsuario">Crear Usuarios</a>
+                <a class="nav-link" asp-controller="Agenda" asp-action="AgendaHistorial">Historial</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mi Cuenta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="nav-link" asp-controller="Usuario" asp-action="Cerrar"> Cerrar Sesión</a>
+
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header-area">
+            <div class="title">Gestionar Lugar</div>
+            <div class="buttons-group">
+                <button type="button" class="btn btn-crear" onclick="toggleForm()">CREAR</button>
+                <button class="btn btn-actualizar">ACTUALIZAR</button>
+                <button class="btn btn-danger btn-eliminar">ELIMINAR</button>
+            </div>
+        </div>
+        <div class="table-container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Identificador</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Número Local</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Municipio</th>
+                        <th scope="col">Seleccionar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (AgendaLugar agendaservicio in Model)
+                    {
+                        <tr>
+                            <td>@agendaservicio.id</td>
+                            <td>@agendaservicio.nombre</td>
+                            <td>@agendaservicio.direccion</td>
+                            <td>@agendaservicio.numerolocal</td>
+                            <td>Activo</td>
+                            <td>@agendaservicio.municipio</td>
+                            <td><input type="checkbox" name="servicioSeleccionado" value="@agendaservicio.id"></td>
+
+
+                        </tr>
+                    }
+                    <!-- Add more rows as needed -->
+                </tbody>
+            </table>
+        </div>
+
+        
+        <form id="generarAgendaForm" asp-controller="Agenda" asp-action="AgendaLugar" method="post" class="row">
+            <div class="form-container hidden" id="dataEntryForm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre del lugar">
+                        </div>
+                        <div class="form-group">
+                            <label for="direccion">Dirección del lugar</label>
+                            <input type="text" class="form-control" name="direccion" placeholder="Dirección del lugar">
+                        </div>
+                        <div class="form-group">
+                            <label for="numeroLocal">Número de local</label>
+                            <input type="text" class="form-control" name="numeroLocal" placeholder="Número de local">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="estadoLugar">Estado del lugar</label>
+                            <select class="form-control" name="estadoLugar">
+                                <option>Activo</option>
+                                <option>Inactivo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="municipio">Nombre del municipio</label>
+                            <select class="form-control" name="municipio">
+                                <option selected disabled value="">Ninguna</option>
+                                <option>Florencia</option>
+                                <option>Morelia</option>
+                                <option>Belen</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="departamento">Nombre del departamento</label>
+                            <select class="form-control" name="departamento">
+                                <option selected disabled value="">Ninguna</option>
+                                <option>Caqueta</option>
+                                <option>Hiula</option>
+                                <option>Meta</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="estadoDepartamento">Estado del departamento</label>
+                            <select class="form-control" name="estadoDepartamento">
+                                <option selected disabled value="">Ninguna</option>
+                                <option>Activo</option>
+                                <option>Inactivo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pais">País</label>
+                            <select class="form-control" name="pais">
+                                <option selected disabled value="">Ninguna</option>
+                                <option>Colombia</option>
+                                <option>Panama</option>
+                                <option>Argentina</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-guardar">Guardar</button>
+            </div>
+        </form>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function toggleForm() {
+            var formContainer = document.getElementById('dataEntryForm');
+            formContainer.classList.toggle('hidden');
+        }
+    </script>
+
+</body>
+</html>
+
+

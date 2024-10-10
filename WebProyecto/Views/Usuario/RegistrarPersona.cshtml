@@ -1,0 +1,65 @@
+﻿
+@model Persona
+
+
+<form class="container form-datos-mascota" method="post" asp-action="RegistrarPersona" asp-controller="Usuario">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h2 style="text-align: center;">Formulario de Registro</h2>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="nombres">Nombres</label>
+                                <input asp-for="nombre"  type="text" class="form-control" name="Persona.nombre" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="apellido" style="display: flex; justify-content: space-between; align-items: center;">Apellidos <span style="float: right; margin-left: 5px;">&#128101;</span></label>
+                                <input type="text" class="form-control" id="apellido" name="Persona.apellido" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="tipoDocumento">Tipo de Documento</label>
+                                <select asp-items="@(new SelectList(ViewBag.DatosComboBox, "Value", "Text"))" class="form-control" name="Persona.tipoDocumento">
+                                    <option value="">Selecciona un tipo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="numeroDocumento" style="display: flex; justify-content: space-between; align-items: center;">Número de Documento <span style="float: right; margin-left: 5px;">&#128273;</span></label>
+                                <input type="text" class="form-control" id="numeroDocumento" name="Persona.idPersona" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" style="display: flex; justify-content: space-between; align-items: center;">Correo Electrónico <span style="float: right; margin-left: 5px;">&#128231;</span></label>
+                        <input type="email" class="form-control" id="email" name="Persona.usuario.correo" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono" style="display: flex; justify-content: space-between; align-items: center;">Número de Teléfono <span style="float: right; margin-left: 5px;">&#128222;</span></label>
+                        <input type="tel" class="form-control" id="telefono" name="Persona.telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" style="display: flex; justify-content: space-between; align-items: center;">Contraseña <span style="float: right; margin-left: 5px;">&#129333;</span></label>
+                        <input type="password" class="form-control" id="password" name="Persona.usuario.contrasena" required>
+                    </div>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <button type="submit" class="btn" style="background-color: #e75480; color: #fff;">Registrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+
+
+

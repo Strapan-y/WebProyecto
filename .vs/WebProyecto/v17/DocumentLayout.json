@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|c:\\users\\andre\\onedrive\\ingenieria\\noveno semestre\\programacion web\\proyecto agenda final\\webproyecto\\webproyecto\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|solutionrelative:webproyecto\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|c:\\users\\andre\\onedrive\\ingenieria\\noveno semestre\\programacion web\\proyecto agenda final\\webproyecto\\webproyecto\\views\\agenda\\agendacrearusuario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|solutionrelative:webproyecto\\views\\agenda\\agendacrearusuario.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|c:\\users\\andre\\onedrive\\ingenieria\\noveno semestre\\programacion web\\proyecto agenda final\\webproyecto\\webproyecto\\views\\agenda\\agendalugar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|solutionrelative:webproyecto\\views\\agenda\\agendalugar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|c:\\users\\andre\\onedrive\\ingenieria\\noveno semestre\\programacion web\\proyecto agenda final\\webproyecto\\webproyecto\\controllers\\agendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|solutionrelative:webproyecto\\controllers\\agendacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|c:\\users\\andre\\onedrive\\ingenieria\\noveno semestre\\programacion web\\proyecto agenda final\\webproyecto\\webproyecto\\models\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|solutionrelative:webproyecto\\models\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|c:\\users\\andre\\onedrive\\ingenieria\\noveno semestre\\programacion web\\proyecto agenda final\\webproyecto\\webproyecto\\data\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|solutionrelative:webproyecto\\data\\conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|c:\\users\\andre\\onedrive\\ingenieria\\noveno semestre\\programacion web\\proyecto agenda final\\webproyecto\\webproyecto\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|solutionrelative:webproyecto\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|c:\\users\\andre\\onedrive\\ingenieria\\noveno semestre\\programacion web\\proyecto agenda final\\webproyecto\\webproyecto\\views\\empleado\\inicio.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|solutionrelative:webproyecto\\views\\empleado\\inicio.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|c:\\users\\andre\\onedrive\\ingenieria\\noveno semestre\\programacion web\\proyecto agenda final\\webproyecto\\webproyecto\\views\\agenda\\agenda.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{38C09948-3AC6-449D-8AAC-3A20EC03EEEA}|WebProyecto\\WebProyecto.csproj|solutionrelative:webproyecto\\views\\agenda\\agenda.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Program.cs",
+              "RelativeDocumentMoniker": "WebProyecto\\Program.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Program.cs",
+              "RelativeToolTip": "WebProyecto\\Program.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAcwCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-10T23:56:28.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Persona.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Models\\Persona.cs",
+              "RelativeDocumentMoniker": "WebProyecto\\Models\\Persona.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Models\\Persona.cs",
+              "RelativeToolTip": "WebProyecto\\Models\\Persona.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T06:12:49.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "WebProyecto\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Properties\\launchSettings.json",
+              "RelativeToolTip": "WebProyecto\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-30T05:08:52.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AgendaLugar.cshtml",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Views\\Agenda\\AgendaLugar.cshtml",
+              "RelativeDocumentMoniker": "WebProyecto\\Views\\Agenda\\AgendaLugar.cshtml",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Views\\Agenda\\AgendaLugar.cshtml",
+              "RelativeToolTip": "WebProyecto\\Views\\Agenda\\AgendaLugar.cshtml",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAABIAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-30T04:52:04.563Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Conexion.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Data\\Conexion.cs",
+              "RelativeDocumentMoniker": "WebProyecto\\Data\\Conexion.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Data\\Conexion.cs",
+              "RelativeToolTip": "WebProyecto\\Data\\Conexion.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-30T04:49:52.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AgendaController.cs",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Controllers\\AgendaController.cs",
+              "RelativeDocumentMoniker": "WebProyecto\\Controllers\\AgendaController.cs",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Controllers\\AgendaController.cs",
+              "RelativeToolTip": "WebProyecto\\Controllers\\AgendaController.cs",
+              "ViewState": "AQIAAPwBAAAAAAAAAAAIwN4BAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-09T21:46:18.8Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AgendaCrearUsuario.cshtml",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Views\\Agenda\\AgendaCrearUsuario.cshtml",
+              "RelativeDocumentMoniker": "WebProyecto\\Views\\Agenda\\AgendaCrearUsuario.cshtml",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Views\\Agenda\\AgendaCrearUsuario.cshtml",
+              "RelativeToolTip": "WebProyecto\\Views\\Agenda\\AgendaCrearUsuario.cshtml",
+              "ViewState": "AQIAAMYAAAAAAAAAAAAAAN8AAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-04T04:41:54.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Inicio.cshtml",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Views\\Empleado\\Inicio.cshtml",
+              "RelativeDocumentMoniker": "WebProyecto\\Views\\Empleado\\Inicio.cshtml",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Views\\Empleado\\Inicio.cshtml",
+              "RelativeToolTip": "WebProyecto\\Views\\Empleado\\Inicio.cshtml",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAGEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-11T19:24:41.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Agenda.cshtml",
+              "DocumentMoniker": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Views\\Agenda\\Agenda.cshtml",
+              "RelativeDocumentMoniker": "WebProyecto\\Views\\Agenda\\Agenda.cshtml",
+              "ToolTip": "C:\\Users\\andre\\OneDrive\\Ingenieria\\Noveno Semestre\\Programacion web\\PROYECTO AGENDA Final\\WebProyecto\\WebProyecto\\Views\\Agenda\\Agenda.cshtml",
+              "RelativeToolTip": "WebProyecto\\Views\\Agenda\\Agenda.cshtml",
+              "ViewState": "AQIAAKgAAAAAAAAAAAAAAIwAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-11T19:24:39.083Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

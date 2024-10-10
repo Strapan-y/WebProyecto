@@ -1,0 +1,218 @@
+﻿@model IEnumerable<ConsutlaHistorialServicios>
+@{
+    ViewData["Title"] = "Mi Agenda";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Mi Agenda</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: black; /* Establece el color de la fuente de todo el cuerpo en negro */
+        }
+
+        .navbar-custom {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+            .navbar-custom .navbar-nav .nav-link {
+                color: black; /* Establece el color de la fuente de los enlaces de la barra de navegación en negro */
+            }
+
+                .navbar-custom .navbar-nav .nav-link.active {
+                    background-color: #f8bbd0; /* Color rosado para el enlace activo */
+                    border-radius: 5px;
+                    color: black; /* Establece el color de la fuente del enlace activo en negro */
+                }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .shadow-box {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .table-responsive {
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            background-color: green;
+            color: white; /* Establece el color de la fuente del botón en negro */
+            border-radius: 20px;
+            padding: 10px 25px;
+        }
+
+            .btn-custom:hover {
+                background-color: darkgreen; /* Un verde más oscuro para el efecto hover */
+                color: white; /* Cambia el color de la fuente a blanco para el efecto hover */
+            }
+
+        .header {
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        .form-row {
+            align-items: end; /* Alinea los controles del formulario en la parte inferior */
+        }
+
+        .disabled {
+            pointer-events: none; /* Desactiva eventos de clic */
+            opacity: 0.6; /* Estilo para indicar que el botón está desactivado */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link " asp-controller="Usuario" asp-action="UsuarioReservaServicios">Servicios</a>
+                <a class="nav-link active" asp-controller="Usuario" asp-action="UsuarioMiagenda">Mis Reservas</a>
+                <a class="nav-link" asp-controller="Usuario" asp-action="UsuarioHistorial">Historial</a>
+                <a class="nav-link" asp-controller="Usuario" asp-action="Cerrar">Cerrar Sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Container for Agenda -->
+    <div class="container">
+        <div class="header">
+            <h2>Mi Agenda</h2>
+        </div>
+        <div class="shadow-box">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Local</th>
+                            <th>Centro comercial</th>
+                            <th>Tipo Servicio</th>
+                            <th>Precio</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (ConsutlaHistorialServicios agendaservicio in Model)
+                        {
+                            <tr>
+                                <td>@agendaservicio.numLocal</td>
+                                <td>@agendaservicio.descripcionlocal</td>
+                                <td>@agendaservicio.Nombre_Servicio</td>
+                                <td>$25.000</td>
+                                <td>@agendaservicio.fechainicio_age</td>
+                                <td>@agendaservicio.horainicio_age</td>
+                                <td>Activo</td>
+                                <td>
+                                    <form asp-controller="Usuario" asp-action="CancelarAgenda" method="post">
+                                        <input type="hidden" name="idReserva" value="@agendaservicio.id_reserva" />
+                                        <button type="submit" class="btn btn-danger btn-sm btn-action">Cancelar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                        <!-- Más filas según sea necesario -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ventana Modal para Reprogramar -->
+    <div class="modal fade" id="modalReprogramar" tabindex="-1" role="dialog" aria-labelledby="modalReprogramarLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalReprogramarLabel">Reprogramar Reserva</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="nuevaFecha">Nueva Fecha</label>
+                            <input type="date" class="form-control" id="nuevaFecha" name="fecha" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nuevaHora">Nueva Hora</label>
+                            <input type="time" class="form-control" id="nuevaHora" name="hora" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" type="submit">Guardar cambios</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts for Bootstrap functionality -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript para manejar las acciones de la reserva -->
+    <script>
+        function abrirModalReprogramar() {
+            $('#modalReprogramar').modal('show');
+        }
+
+        function accionReserva(element, action) {
+            var parentRow = element.parentNode.parentNode;
+            switch (action) {
+                case 'reprogramar':
+                    abrirModalReprogramar();
+                    // Deshabilitamos el botón de reprogramar después de usarlo una vez
+                    element.classList.add('disabled');
+                    break;
+                case 'cancelar':
+                    // Código para cancelar
+                    alert('Reserva cancelada.');
+                    // Si se cancela, también deshabilitamos el botón de reprogramar
+                    var reprogramarButton = parentRow.querySelector('.btn-warning');
+                    if (reprogramarButton) {
+                        reprogramarButton.classList.add('disabled');
+                    }
+                    element.classList.add('disabled');
+                    break;
+                default:
+                    return;
+            }
+        }
+
+        function guardarReprogramacion() {
+            var nuevaFecha = document.getElementById('nuevaFecha').value;
+            var nuevaHora = document.getElementById('nuevaHora').value;
+            if (nuevaFecha && nuevaHora) {
+                // Aquí debes agregar la lógica para guardar la nueva fecha y hora de la reserva
+                alert('Reserva reprogramada para: ' + nuevaFecha + ' a las ' + nuevaHora);
+                $('#modalReprogramar').modal('hide');
+            } else {
+                alert('Por favor, selecciona una fecha y hora válidas.');
+            }
+        }
+    </script>
+</body>
+</html>
+
+
